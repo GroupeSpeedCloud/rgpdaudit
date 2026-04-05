@@ -189,7 +189,7 @@ $currentPage = 'signatures';
                         </button>
                     </div>
                 </div>
-                <div id="preview" class="p-4 sm:p-6 bg-white min-h-[150px] overflow-x-auto">
+                <div id="preview" class="p-2 bg-white min-h-[100px] overflow-x-auto">
                     <!-- Signature générée ici -->
                 </div>
                 
@@ -370,11 +370,29 @@ $currentPage = 'signatures';
                 // Générer le canvas avec html2canvas
                 const canvas = await html2canvas(preview, {
                     backgroundColor: '#ffffff',
-                    scale: 2,
+                    scale: 1,
                     useCORS: true,
                     allowTaint: true,
                     logging: false
                 });
+                
+                // Redimensionner pour une taille optimale de signature (max 400px de large)
+                const maxWidth = 400;
+                let finalCanvas = canvas;
+                
+                if (canvas.width > maxWidth) {
+                    const ratio = maxWidth / canvas.width;
+                    const newHeight = Math.round(canvas.height * ratio);
+                    
+                    finalCanvas = document.createElement('canvas');
+                    finalCanvas.width = maxWidth;
+                    finalCanvas.height = newHeight;
+                    
+                    const ctx = finalCanvas.getContext('2d');
+                    ctx.imageSmoothingEnabled = true;
+                    ctx.imageSmoothingQuality = 'high';
+                    ctx.drawImage(canvas, 0, 0, maxWidth, newHeight);
+                }
                 
                 // Préparer le nom du fichier
                 const style = document.querySelector('input[name="style"]:checked').value;
@@ -383,8 +401,8 @@ $currentPage = 'signatures';
                     : serviceForm.service.value;
                 const filename = `signature_${name}_${style}`;
                 
-                // Upload vers le serveur
-                const imageData = canvas.toDataURL('image/png');
+                // Upload vers le serveur (utiliser finalCanvas redimensionné)
+                const imageData = finalCanvas.toDataURL('image/png');
                 const response = await fetch('/upload-signature.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
