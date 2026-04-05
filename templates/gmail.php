@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body style="margin: 0; padding: 0;">
 <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Titillium Web', Arial, sans-serif; font-size: 14px; color: #333333; line-height: 1.4;">
   <tbody>
     <tr>
       <td style="vertical-align: top; padding-right: 16px;">
-        <img src="https://signatures.groupe-speed.cloud/assets/images/cloudy.png" alt="Groupe Speed Cloud" width="90" height="90" style="display: block; border-radius: 12px;">
+        <img src="<?= $company['logo'] ?>" alt="<?= $company['name'] ?>" width="90" height="90" style="display: block; border-radius: 12px;">
       </td>
       <td style="vertical-align: top; border-left: 2px solid #8a4dfd; padding-left: 16px;">
         <!-- Name & Job -->
         <table cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td style="padding-bottom: 8px;">
-              <span style="font-size: 17px; font-weight: 700; color: #1a1a1a; display: block; line-height: 1.2;">{name}</span>
-              <span style="font-size: 13px; color: #8a4dfd; font-weight: 600; display: block; margin-top: 2px;">{job}</span>
+              <span style="font-size: 17px; font-weight: 700; color: #1a1a1a; display: block; line-height: 1.2;"><?= $name ?></span>
+              <?php if ($job): ?>
+              <span style="font-size: 13px; color: #8a4dfd; font-weight: 600; display: block; margin-top: 2px;"><?= $job ?></span>
+              <?php endif; ?>
             </td>
           </tr>
         </table>
@@ -32,17 +27,17 @@
         <table cellpadding="0" cellspacing="0" border="0" style="font-size: 12px; color: #555555;">
           <tr>
             <td style="padding-bottom: 4px;">
-              <a href="mailto:{email}" style="color: #555555; text-decoration: none;">{email}</a>
+              <a href="mailto:<?= $email ?>" style="color: #555555; text-decoration: none;"><?= $email ?></a>
             </td>
           </tr>
           <tr>
             <td style="padding-bottom: 4px;">
-              <a href="https://groupe-speed.cloud" style="color: #8a4dfd; text-decoration: none; font-weight: 600;">groupe-speed.cloud</a>
+              <a href="<?= $company['website'] ?>" style="color: #8a4dfd; text-decoration: none; font-weight: 600;"><?= $company['domain'] ?></a>
             </td>
           </tr>
           <tr>
             <td>
-              <span style="color: #888888;">10 quai du Moulin, 08600 Givet</span>
+              <span style="color: #888888;"><?= $company['address'] ?></span>
             </td>
           </tr>
         </table>
@@ -50,6 +45,3 @@
     </tr>
   </tbody>
 </table>
-<script src="/assets/js/params.min.js"></script>
-</body>
-</html>

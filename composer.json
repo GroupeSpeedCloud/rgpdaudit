@@ -1,0 +1,14 @@
+{
+    "name": "groupe-speed-cloud/signatures",
+    "description": "Générateur de signatures email avec authentification Google",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "google/apiclient": "^2.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

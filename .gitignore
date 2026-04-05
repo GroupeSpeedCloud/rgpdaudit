@@ -1,0 +1,17 @@
+# Dependencies
+/vendor/
+
+# Environment / Config (contains secrets)
+config.php
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
