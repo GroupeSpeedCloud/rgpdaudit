@@ -39,6 +39,7 @@ $authUrl = $client->createAuthUrl();
             }
         }
     </script>
+    <link rel="icon" type="image/png" href="https://sign.groupe-speed.cloud/assets/images/cloudy.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -59,7 +60,7 @@ $authUrl = $client->createAuthUrl();
             Se connecter avec Google
         </a>
         
-        <p class="text-gray-500 text-sm mt-6">Réservé aux collaborateurs @groupe-speed.cloud</p>
+        <p class="text-gray-500 text-sm mt-6">Réservé aux collaborateurs de l'association Groupe Speed Cloud</p>
     </div>
 </body>
 </html>

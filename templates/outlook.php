@@ -1,4 +1,4 @@
-<table cellpadding="0" cellspacing="0" border="0" style="font-family:Segoe UI, Tahoma, Arial, sans-serif; font-size:14px; color:#333333;">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family:'Titillium Web', Segoe UI, Tahoma, Arial, sans-serif; font-size:14px; color:#333333;">
   <tr>
     <td valign="top" style="padding-right:16px; vertical-align:top;">
       <img src="<?= $company['logo'] ?>" alt="<?= $company['name'] ?>" width="90" height="90" style="display:block;">
