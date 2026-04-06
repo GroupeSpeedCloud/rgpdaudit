@@ -1,41 +1,5 @@
 <?php
-$user = $_SESSION['user'];
-$config = require __DIR__ . '/../config.php';
-$currentPage = 'avatar';
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Badge Professionnel - Groupe Speed Cloud</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'speed-purple': '#8a4dfd',
-                        'speed-purple-dark': '#7040d9',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="icon" type="image/png" href="https://sign.groupe-speed.cloud/assets/images/cloudy.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900" style="font-family: 'Titillium Web', sans-serif;">
-    
-    <!-- Navigation Bar -->
-    <nav class="bg-black/30 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3 hover:opacity-80 transition">
-                    <img src="/assets/images/cloudy.png" alt="" class="w-10 h-10 rounded-lg">
-                    <span class="text-white font-bold text-lg hidden sm:block">Groupe Speed Cloud</span>
-                </a>
+// Fichier supprimé : ancien système de signatures
                 
                 <div class="flex items-center gap-1 sm:gap-2">
                     <a href="/" class="px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition <?= $currentPage === 'signatures' ? 'bg-speed-purple text-white' : 'text-gray-300 hover:bg-white/10 hover:text-white' ?>">

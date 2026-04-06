@@ -30,8 +30,8 @@ try {
     $oauth2 = new Google\Service\Oauth2($client);
     $userInfo = $oauth2->userinfo->get();
     
-    // Vérifier le domaine
-    if (!str_ends_with($userInfo->email, '@' . $config['google']['hosted_domain'])) {
+    // Vérifier le domaine (bloqué sur @groupe-speed.cloud)
+    if (!str_ends_with($userInfo->email, '@groupe-speed.cloud')) {
         throw new Exception('Accès réservé aux emails @groupe-speed.cloud');
     }
     
