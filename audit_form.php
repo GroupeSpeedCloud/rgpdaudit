@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 require_once 'db.php';
 session_start();
 $mode = $_GET['mode'] ?? 'simple';
@@ -15,10 +16,15 @@ $points_simplifie = [
 	'consentement_cookies' => 'Consentement cookies',
 	'bouton_refus' => 'Bouton de refus cookies',
 	'pas_tracking_avant_consent' => 'Pas de tracking avant consentement',
-	'https' => 'HTTPS',
+	https' => 'HTTPS',
 	'protection_donnees' => 'Protection des données',
 	'headers_securite' => 'Headers de sécurité',
 ];
+require_once 'oauth.php';
+if (!isUserAuthenticated()) {
+    header('Location: login.php');
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $mode === 'simple') {
 	$score = 0;
 	foreach ($points_simplifie as $key => $label) {

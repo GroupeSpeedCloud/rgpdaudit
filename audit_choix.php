@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 // Choix du type d'audit RGPD
 ?>
 <!DOCTYPE html>
@@ -12,10 +13,14 @@
         .btn { display: block; width: 100%; margin: 20px 0; padding: 18px; font-size: 1.2em; background: #007bff; color: #fff; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; }
         .btn-secondary { background: #6c757d; }
         h1 { margin-bottom: 24px; }
+        .nav { margin-bottom: 32px; }
     </style>
 </head>
 <body>
 <div class="container">
+    <div class="nav">
+        <a href="audit_dashboard.php" class="btn btn-secondary" style="margin-bottom:16px;">Tableau de bord</a>
+    </div>
     <h1>Quel type d'audit souhaitez-vous réaliser&nbsp;?</h1>
     <a href="audit_form.php?mode=simple" class="btn">Audit RGPD simplifié</a>
     <a href="audit_form.php?mode=complet" class="btn btn-secondary">Audit RGPD complet (conforme CNIL)</a>
