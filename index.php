@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])) {
 }
 
 // Préparer l'URL d'authentification Google
-$client = new Google_Client();
+$client = new Google\Client();
 $client->setClientId($config['google_client_id']);
 $client->setClientSecret($config['google_client_secret']);
 $client->setRedirectUri($config['google_redirect_uri']);

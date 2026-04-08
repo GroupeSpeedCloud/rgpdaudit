@@ -1,5 +1,6 @@
 <?php
 // Fichier supprimé : ancien système de signatures
+?>
 <table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Titillium Web', Arial, sans-serif; font-size: 12px; color: #333; border-collapse: collapse;">
   <tr>
     <td style="padding: 10px 15px; background: linear-gradient(135deg, #8a4dfd 0%, #6366f1 100%); border-radius: 8px 8px 0 0;">

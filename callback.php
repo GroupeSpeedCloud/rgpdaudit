@@ -6,9 +6,9 @@ $config = require __DIR__ . '/config.php';
 
 // Créer le client Google
 $client = new Google\Client();
-$client->setClientId($config['google']['client_id']);
-$client->setClientSecret($config['google']['client_secret']);
-$client->setRedirectUri($config['google']['redirect_uri']);
+$client->setClientId($config['google_client_id']);
+$client->setClientSecret($config['google_client_secret']);
+$client->setRedirectUri($config['google_redirect_uri']);
 
 // Récupérer le code d'autorisation
 if (!isset($_GET['code'])) {
@@ -31,7 +31,8 @@ try {
     $userInfo = $oauth2->userinfo->get();
     
     // Vérifier le domaine (bloqué sur @groupe-speed.cloud)
-    if (!str_ends_with($userInfo->email, '@groupe-speed.cloud')) {
+    $isAllowedDomain = substr($userInfo->email, -strlen('@groupe-speed.cloud')) === '@groupe-speed.cloud';
+    if (!$isAllowedDomain) {
         throw new Exception('Accès réservé aux emails @groupe-speed.cloud');
     }
     

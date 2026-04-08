@@ -2,7 +2,6 @@
 <?php
 require_once 'auth.php';
 require_once 'db.php';
-session_start();
 
 $stmt = $db->query('SELECT * FROM audits ORDER BY date_audit DESC, id DESC');
 $audits = $stmt->fetchAll(PDO::FETCH_ASSOC);
